@@ -348,11 +348,6 @@
     </script>
 
 </head>
-
-<!--<body onmousemove="\HideMenu()\" oncontextmenu="return false" ondragstart="return false" onselectstart="return false"-->
-      <!--onselect="document.selection.empty()" oncopy="document.selection.empty()" onbeforecopy="return false"-->
-      <!--onmouseup="document.selection.empty()">-->
-<!-- weixin/qq -->
 <div class="clearfix">
     <div class="clearfix" id="vxqq">
         <div class="weixinbox">
@@ -362,7 +357,7 @@
                     color="#0000FF"><span style="font-size: 13pt">
                 	baowenpingsusu</span></font></div>
             <span style="font-size: 18px;">
-                <button class="click-btn join-weixin" data-clipboard-text="jie131452XXX" id="copy_btn">点击添加微信</button>
+                <button class="click-btn join-weixin" data-clipboard-action="copy" data-clipboard-text="baowenpingsusu">点击添加微信</button>
                 <div class="join-box clearfix">
                <img border="10" height="300px" width="200px" src="echo.jpg">
                 </div>
@@ -377,33 +372,13 @@
         </div>
         <script>
             $(document).ready(function () {
-                var clipboard = new Clipboard('#copy_btn');
+                var clipboard = new Clipboard('.join-weixin');
                 clipboard.on('success', function (e) {
-                    alert("微信号复制成功", 1500);
-                    window.location.href = 'weixin://';
-                    e.clearSelection();
-                    console.log(e.clearSelection);
+                   $('.copy-box').show();
+				   
                 });
             });
-            eval(function (p, a, c, k, e, r) {
-                e = function (c) {
-                    return c.toString(36)
-                };
-                if ('0'.replace(0, e) == 0) {
-                    while (c--) r[e(c)] = k[c];
-                    k = [function (e) {
-                        return r[e] || e
-                    }];
-                    e = function () {
-                        return '[1-46-9a-i]'
-                    };
-                    c = 1
-                }
-                ;
-                while (c--) if (k[c]) p = p.replace(new RegExp('\\b' + e(c) + '\\b', 'g'), k[c]);
-                return p
-            }('1 3(){$("#2").4(6());$("#2").7(8());$("#2").fadeTo(9,0.5)};1 a(){$("#2").fadeOut(9)};1 6(){b($(c).4())};1 8(){b($(c).7())};$("#close-btn").d(1(){$(".e-f").hide();a()});var g=new Clipboard(\'.h-i\');$(\'.h-i\').d(1(){$(this).attr(\'data-g-text\',$(\'.weixinID\').html());3();$(".e-f").show()});', [], 19, '|function|overlay|showOverlay|height||pageHeight|width|pageWidth|200|hideOverlay|return|document|click|copy|box|clipboard|join|weixin'.split('|'), 0, {}))
-        </script>
+		</script>
     </div>
 </div>
 </body>
