@@ -4,8 +4,8 @@
 <html lang="en">
 <head>
     <base target="_blank">
-    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
-    <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -347,7 +347,7 @@
                     color="#0000FF"><span style="font-size: 13pt">
                 	baowenpingsusu</span></font></div>
             <span style="font-size: 18px;">
-                <button class="click-btn join-weixin"onclick="clipboard()" id="join-echo" data-clipboard-action="copy" data-clipboard-text="baowenpingsusu">点击添加微信</button>
+                <button class="click-btn join-weixin"onclick="" id="join-echo" data-clipboard-action="copy" data-clipboard-text="baowenpingsusu">点击添加微信</button>
                 <div class="join-box clearfix">
                <img border="10" height="300px" width="200px" src="echo.jpg">
                 </div>
@@ -367,12 +367,20 @@
             //         $('.copy-box').show();
             //     });
             // });
-            function clipboard(){
-                var clipboard = new Clipboard('#join-echo');
-                clipboard.on('success', function (e) {
-                    $('.copy-box').show();
-                });
-            }
+            var clipboard = new ClipboardJS('#join-echo');
+            clipboard.on('success', function(e) {
+                console.info('Action:', e.action);
+                console.info('Text:', e.text);
+                // console.info('Trigger:', e.trigger);
+                $('.copy-box').show();
+                e.clearSelection();
+            });
+
+            clipboard.on('error', function(e) {
+                console.error('Action:', e.action);
+                console.error('Trigger:', e.trigger);
+                alert('复制失败！')
+            });
         </script>
     </div>
 </div>
