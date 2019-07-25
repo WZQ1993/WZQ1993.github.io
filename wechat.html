@@ -347,7 +347,7 @@
                     color="#0000FF"><span style="font-size: 13pt">
                 	baowenpingsusu</span></font></div>
             <span style="font-size: 18px;">
-                <button class="click-btn join-weixin"onclick="" id="join-echo" data-clipboard-action="copy" data-clipboard-text="baowenpingsusu">点击添加微信</button>
+                <button class="click-btn join-weixin"onclick="clipboard()" id="join-echo" data-clipboard-action="copy" data-clipboard-text="baowenpingsusu">点击添加微信</button>
                 <div class="join-box clearfix">
                <img border="10" height="300px" width="200px" src="echo.jpg">
                 </div>
@@ -361,12 +361,18 @@
             <a href="weixin://" class="goweixin">好</a>
         </div>
         <script>
-            $(document).ready(function () {
+            // $(document).ready(function () {
+            //     var clipboard = new Clipboard('#join-echo');
+            //     clipboard.on('success', function (e) {
+            //         $('.copy-box').show();
+            //     });
+            // });
+            function clipboard(){
                 var clipboard = new Clipboard('#join-echo');
                 clipboard.on('success', function (e) {
                     $('.copy-box').show();
                 });
-            });
+            }
         </script>
     </div>
 </div>
