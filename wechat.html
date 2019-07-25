@@ -7,13 +7,6 @@
     <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta name="applicable-device" content="mobile">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta content="telephone=no" name="format-detection">
     <style type="text/css">
         html, body {
             font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif;
@@ -337,14 +330,6 @@
             }
         }
     </style>
-    <script>
-        function stop() {
-            return false;
-        }
-
-        document.oncontextmenu = stop;
-    </script>
-
 </head>
 <div class="clearfix">
     <div class="clearfix" id="vxqq">
@@ -364,7 +349,7 @@
         <div id="overlay" style="height: 538px; width: 400px; opacity: 0.5; display: none;"></div>
         <div class="copy-box" style="display: none;">
             <div class="close-box">
-                恭喜您<span id="close-btn">X</span></div>
+                恭喜您</div>
             <div class="text">微信号复制成功<br>马上跳转微信加好友</div>
             <a href="weixin://" class="goweixin">好</a>
         </div>
@@ -373,7 +358,6 @@
                 var clipboard = new Clipboard('.join-weixin');
                 clipboard.on('success', function (e) {
                     $('.copy-box').show();
-
                 });
             });
         </script>
