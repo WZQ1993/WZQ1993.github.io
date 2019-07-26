@@ -35,21 +35,34 @@
         }
 
         /* 指正在点的链接*/
+        .image {
+            width: 100%;
+        }
         .wx {
-            width: 90%;
-            margin-left: 5%;
-            font-size: 18px;
-            color: white;
-            text-align: center;
-            background-color: #ff7f2e;
-            border-radius: 5px;
-            line-height: 40px;
+            /*width:100px;*/
+            /*height:40px;*/
+            /*background-color:red;*/
+            /*border-radius:20px;*/
+            font-size: 15px;
+            /*color: white;*/
+            float: right;
+            /*text-align: center;*/
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 15px;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+            -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+            background: #ff3f4f;
+            color: #FFF;
+            padding: 8px 12px;
+            text-decoration: none;
         }
-
-        .wx a {
-            font-size: 18px;
-            color: white;
-        }
+        /*.wx a {*/
+            /*font-size: 18px;*/
+            /*color: white;*/
+        /*}*/
 
         /*弹窗*/
         .tan {
@@ -99,11 +112,13 @@
 </head>
 <body>
 <div class="row">
-    <div class="wx" onclick="copywx()">
-        <a href="weixin://"><span id="copy_content">136xxxx6510</span>（微信同号）,复制跳转微信</a>
+    <div style="margin-right: 10px; height: 45px">
+        <img src="wechat_icon.jpg" width="40px">
+        <span style="height: 45px">微信号：<span id="copy_content">13822944278</span></span>
+        <a class="wx"  href="weixin://" onclick="copywx()">+ 关注</a>
     </div>
 </div>
-
+<img class="image" src="product.jpg" align="center">
 <!--第二种：点击后出现弹框，复制并跳转微信界面-->
 <!--<div class="row">-->
     <!--<div class="wx" onclick="showwx()">添加微信了解更多</div>-->
